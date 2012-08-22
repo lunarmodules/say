@@ -17,6 +17,6 @@ dependencies = {
 build = {
   type = "builtin",
   modules = {
-    ["say.s"] = "s.lua"
+    ["say.s"] = "src/s.lua"
   }
 }
