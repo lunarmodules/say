@@ -1,4 +1,4 @@
-local json = require("dkjson")
+require 'ml'.import()
 
 local s = {
   registry = { },
@@ -38,7 +38,7 @@ local __meta = {
       local s = v
 
       if type(v) == "table" then
-        s = json.encode(v)
+        s = tstring(v)
       else
         s = tostring(v)
       end
