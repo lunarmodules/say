@@ -1,7 +1,8 @@
 package = "say"
 version = "1.0-1"
 source = {
-  url = "https://github.com/downloads/Olivine-Labs/say/say-1.0.tar.gz"
+  url = "https://github.com/downloads/Olivine-Labs/say/say-1.0.tar.gz",
+  dir = "say"
 }
 description = {
   summary = "Lua String Hashing/Indexing Library",
@@ -12,7 +13,8 @@ description = {
   license = "MIT <http://opensource.org/licenses/MIT>"
 }
 dependencies = {
-  "lua >= 5.1"
+  "lua >= 5.1",
+  "microlight >= 1.0"
 }
 build = {
   type = "builtin",
