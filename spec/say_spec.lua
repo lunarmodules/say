@@ -1,5 +1,5 @@
 describe("Tests to make sure the say library is functional", function()
-  local s = require('say.s')
+  local s = require('say')
 
   s:set_namespace('en')
 
