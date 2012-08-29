@@ -54,4 +54,6 @@ local __meta = {
   end
 }
 
+s:set_namespace('en')
+
 return setmetatable(s, __meta)
