@@ -19,10 +19,6 @@ local __meta = {
   __call = function(self, key, vars)
     local str = ''
 
-    if not self.registry[self.current_namespace] then
-      self.registry[self.current_namespace] = {}
-    end
-
     if not vars then
       vars = {}
     end
