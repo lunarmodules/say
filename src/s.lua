@@ -1,4 +1,4 @@
-require 'ml'.import()
+local tstring = require('ml').tstring
 
 local s = {
   registry = { },
