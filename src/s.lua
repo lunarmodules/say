@@ -17,16 +17,8 @@ local s = {
 
 local __meta = {
   __call = function(self, key, vars)
-    local str = ''
-
-    if not vars then
-      vars = {}
-    end
-
-    str = self.registry[self.current_namespace][key]
-
-    if type(str) ~= 'string' then str = '' end
-
+    vars = vars or {}
+    local str = tostring(self.registry[self.current_namespace][key] or '')
     local strings = {}
 
     for i,v in ipairs(vars) do
