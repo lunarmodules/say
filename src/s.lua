@@ -5,13 +5,12 @@ local s = {
 
   set_namespace = function(self, namespace)
     self.current_namespace = namespace
-  end,
-
-  set = function(self, key, value)
     if not self.registry[self.current_namespace] then
       self.registry[self.current_namespace] = {}
     end
+  end,
 
+  set = function(self, key, value)
     self.registry[self.current_namespace][key] = value
   end
 }
