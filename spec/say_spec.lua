@@ -1,8 +1,6 @@
 describe("Tests to make sure the say library is functional", function()
   local s = require('say')
 
-  s:set_namespace('en')
-
   it("tests the set function metamethod", function()
     s:set('herp', 'derp')
     assert(s.registry.en.herp == 'derp')
