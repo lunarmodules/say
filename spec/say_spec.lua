@@ -15,8 +15,5 @@ describe("Tests to make sure the say library is functional", function()
 
     s:set('herp', '%s%s')
     assert(s('herp', {'test', 'test'}) == 'testtest')
-
-    s:set('herp', '%s')
-    assert(s('herp', { { test = 'test'} }) == '{"test":"test"}')
   end)
 end)
