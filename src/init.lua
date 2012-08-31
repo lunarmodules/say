@@ -27,15 +27,7 @@ local __meta = {
     local strings = {}
 
     for i,v in ipairs(vars) do
-      local s = v
-
-      if type(v) == "table" then
-        s = tstring(v)
-      else
-        s = tostring(v)
-      end
-
-      table.insert(strings, s)
+      table.insert(strings, tostring(v))
     end
 
     return #strings > 0 and str:format(unpack(strings)) or str
