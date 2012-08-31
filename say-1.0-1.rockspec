@@ -13,8 +13,7 @@ description = {
   license = "MIT <http://opensource.org/licenses/MIT>"
 }
 dependencies = {
-  "lua >= 5.1",
-  "microlight >= 1.0"
+  "lua >= 5.1"
 }
 build = {
   type = "builtin",
