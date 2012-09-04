@@ -20,14 +20,16 @@ describe("Tests to make sure the say library is functional", function()
   it("tests the substitution of variable types; boolean, number, string and table", function()
     s:set('substitute_test', 'boolean = %s, number = %s, string = "%s", table = %s')
     local atable = {}
-    assert(s('substitute_test', {true, 100, 'some text', atable}) == 'boolean = true, number = 100, string = "some text", table = ' .. tostring(atable)
+    assert(s('substitute_test', {true, 100, 'some text', atable}) == 'boolean = true, number = 100, string = "some text", table = ' .. tostring(atable))
   end)
 
   it("tests the set_fallback method", function()
+    s:set_namespace('en')
+    s:set('herp', 'derp')
     s:set_namespace('not-en')
     s:set('not-herp', 'not-derp')
-    assert(s('not-herp') == 'not-derp')
-    
+
+    assert(s('not-herp') == 'not-derp')    
     assert(s('herp') == 'derp')
   end)
   
