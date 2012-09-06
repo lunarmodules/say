@@ -20,7 +20,7 @@ s:set('wow', 'So much money!')
 print(s('money', 1000)) -- I have 1000 dollars
 
 s:set_namespace("fr") -- switch to french!
-s:set('so_much_money', 'Tant d'argent!')
+s:set('so_much_money', "Tant d'argent!")
 
 print(s('wow')) -- Tant d'argent!
 s:set_namespace("en")  -- switch back to english!
