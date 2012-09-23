@@ -4,7 +4,7 @@ describe("Tests to make sure the say library is functional", function()
   setup(function()
     _TEST = true
     package.loaded['say'] = false -- busted uses it, must force to reload
-    s = require('say')
+    s = require('init')   -- devcode is in /src/init.lua not in /src/say/init.lua
   end)
   
   teardown(function()
