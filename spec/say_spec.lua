@@ -1,9 +1,19 @@
-describe("Tests to make sure the say library is functional", function()
-  local s = require('say')
+local s
 
+describe("Tests to make sure the say library is functional", function()
+  setup(function()
+    _TEST = true
+    package.loaded['say'] = false -- busted uses it, must force to reload
+    s = require('init')   -- devcode is in /src/init.lua not in /src/say/init.lua
+  end)
+  
+  teardown(function()
+    _TEST = nil
+  end)
+  
   it("tests the set function metamethod", function()
     s:set('herp', 'derp')
-    assert(s.registry.en.herp == 'derp')
+    assert(s._registry.en.herp == 'derp')
   end)
 
   it("tests the __call metamethod", function()
