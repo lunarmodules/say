@@ -32,5 +32,8 @@ describe("Tests to make sure the say library is functional", function()
     assert(s('not-herp') == 'not-derp')    
     assert(s('herp') == 'derp')
   end)
-  
+
+  it("tests missing elements returns nil", function()
+    assert(s('this does not exist') == nil)
+  end)
 end)
