@@ -28,7 +28,11 @@ local s = {
 local __meta = {
   __call = function(self, key, vars)
     vars = vars or {}
-    local str = tostring(self.registry[self.current_namespace][key] or self.registry[self.fallback_namespace][key] or '')
+    local str = self.registry[self.current_namespace][key] or self.registry[self.fallback_namespace][key]
+    if str == nil then
+      return nil
+    end
+    str = tostring(str)
     local strings = {}
 
     for i,v in ipairs(vars) do
