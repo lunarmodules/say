@@ -2,13 +2,8 @@ local s
 
 describe("Tests to make sure the say library is functional", function()
   setup(function()
-    _TEST = true
     package.loaded['say'] = false -- busted uses it, must force to reload
     s = require('init')   -- devcode is in /src/init.lua not in /src/say/init.lua
-  end)
-  
-  teardown(function()
-    _TEST = nil
   end)
   
   it("tests the set function metamethod", function()
