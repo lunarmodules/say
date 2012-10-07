@@ -1,34 +1,38 @@
+local registry = { }
+local current_namespace
+local fallback_namespace
+
 local s = {
 
   _COPYRIGHT   = "Copyright (c) 2012 Olivine Labs, LLC.",
   _DESCRIPTION = "A simple string key/value store for i18n or any other case where you want namespaced strings.",
   _VERSION     = "Say 1.1",
 
-  registry = { },
-
   set_namespace = function(self, namespace)
-    self.current_namespace = namespace
-    if not self.registry[self.current_namespace] then
-      self.registry[self.current_namespace] = {}
+    current_namespace = namespace
+    if not registry[current_namespace] then
+      registry[current_namespace] = {}
     end
   end,
 
   set_fallback = function(self, namespace)
-    self.fallback_namespace = namespace
-    if not self.registry[self.fallback_namespace] then
-      self.registry[self.fallback_namespace] = {}
+    fallback_namespace = namespace
+    if not registry[fallback_namespace] then
+      registry[fallback_namespace] = {}
     end
   end,
 
   set = function(self, key, value)
-    self.registry[self.current_namespace][key] = value
+    registry[current_namespace][key] = value
   end
 }
 
 local __meta = {
   __call = function(self, key, vars)
     vars = vars or {}
-    local str = self.registry[self.current_namespace][key] or self.registry[self.fallback_namespace][key]
+
+    local str = registry[current_namespace][key] or registry[fallback_namespace][key]
+
     if str == nil then
       return nil
     end
@@ -43,11 +47,15 @@ local __meta = {
   end,
 
   __index = function(self, key)
-    return self.registry[key]
+    return registry[key]
   end
 }
 
 s:set_fallback('en')
 s:set_namespace('en')
+
+if _TEST then
+  s._registry = registry -- force different name to make sure with _TEST behaves exactly as without _TEST
+end
 
 return setmetatable(s, __meta)
