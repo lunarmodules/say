@@ -1,3 +1,5 @@
+local unpack = table.unpack or unpack
+
 local registry = { }
 local current_namespace
 local fallback_namespace
