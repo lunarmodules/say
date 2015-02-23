@@ -56,8 +56,6 @@ local __meta = {
 s:set_fallback('en')
 s:set_namespace('en')
 
-if _TEST then
-  s._registry = registry -- force different name to make sure with _TEST behaves exactly as without _TEST
-end
+s._registry = registry
 
 return setmetatable(s, __meta)
