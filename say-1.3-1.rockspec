@@ -1,8 +1,8 @@
 package = "say"
-version = "1.3-0"
+version = "1.3-1"
 source = {
-  url = "https://github.com/Olivine-Labs/say/archive/v1.3-0.tar.gz",
-  dir = "say-1.3-0"
+  url = "https://github.com/Olivine-Labs/say/archive/v1.3-1.tar.gz",
+  dir = "say-1.3-1"
 }
 description = {
   summary = "Lua String Hashing/Indexing Library",
