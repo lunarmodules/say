@@ -1,7 +1,7 @@
 package = "say"
-version = "1.2-1"
+version = "1.3-0"
 source = {
-  url = "https://github.com/downloads/Olivine-Labs/say/say-1.2.tar.gz",
+  url = "https://github.com/Olivine-Labs/say/archive/v1.3-0.tar.gz",
   dir = "say"
 }
 description = {
