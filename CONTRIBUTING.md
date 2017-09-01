@@ -40,4 +40,4 @@ you're doing, such as "klingon-translations"
 
 Please note - if you want to change multiple things that don't depend on each 
 other, make sure you check the master branch back out before making more
-changes - that way we can take in each change seperately.
+changes - that way we can take in each change separately.
