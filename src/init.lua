@@ -31,6 +31,9 @@ local s = {
 
 local __meta = {
   __call = function(self, key, vars)
+    if vars ~= nil and type(vars) ~= "table" then
+      error(("expected parameter table to be a table, got '%s'"):format(type(vars)), 2)
+    end
     vars = vars or {}
 
     local str = registry[current_namespace][key] or registry[fallback_namespace][key]

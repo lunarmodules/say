@@ -44,6 +44,12 @@ describe("Tests to make sure the say library is functional", function()
     assert(s('herp') == 'derp')
   end)
 
+  it("errors on bad type of param table", function()
+    s:set_namespace('en')
+    s:set('herp', 'derp %s')
+    assert.has.error(function() s('herp', 1000) end, "expected parameter table to be a table, got 'number'")
+  end)
+
   it("tests missing elements returns nil", function()
     assert(s('this does not exist') == nil)
   end)
