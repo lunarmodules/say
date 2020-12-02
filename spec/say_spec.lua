@@ -5,7 +5,7 @@ describe("Tests to make sure the say library is functional", function()
     package.loaded['say'] = false -- busted uses it, must force to reload
     s = require('init')   -- devcode is in /src/init.lua not in /src/say/init.lua
   end)
-  
+
   it("tests the set function metamethod", function()
     s:set('herp', 'derp')
     assert(s._registry.en.herp == 'derp')
@@ -40,7 +40,7 @@ describe("Tests to make sure the say library is functional", function()
     s:set_namespace('not-en')
     s:set('not-herp', 'not-derp')
 
-    assert(s('not-herp') == 'not-derp')    
+    assert(s('not-herp') == 'not-derp')
     assert(s('herp') == 'derp')
   end)
 
