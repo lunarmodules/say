@@ -8,7 +8,7 @@ local s = {
 
   _COPYRIGHT   = "Copyright (c) 2012 Olivine Labs, LLC.",
   _DESCRIPTION = "A simple string key/value store for i18n or any other case where you want namespaced strings.",
-  _VERSION     = "Say 1.2",
+  _VERSION     = "Say 1.3",
 
   set_namespace = function(self, namespace)
     current_namespace = namespace
