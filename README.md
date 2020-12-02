@@ -26,3 +26,15 @@ print(s('wow')) -- Tant d'argent!
 s:set_namespace("en")  -- switch back to english!
 print(s('wow')) -- So much money!
 ```
+
+NOTE: the parameters table can have `nil` values, but in that case it must
+have an `n` field to indicate table size.
+
+```lua
+s = require("say")
+
+s:set('money', 'I have %s %s')
+
+print(s('money', {1000, "dollars"})) -- I have 1000 dollars
+print(s('money', {nil, "euros", n = 2})) -- I have nil euros
+```

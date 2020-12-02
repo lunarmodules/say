@@ -41,8 +41,8 @@ local __meta = {
     str = tostring(str)
     local strings = {}
 
-    for i,v in ipairs(vars) do
-      table.insert(strings, tostring(v))
+    for i = 1, vars.n or #vars do
+      table.insert(strings, tostring(vars[i]))
     end
 
     return #strings > 0 and str:format(unpack(strings)) or str

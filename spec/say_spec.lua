@@ -28,6 +28,12 @@ describe("Tests to make sure the say library is functional", function()
     assert(s('substitute_test', {true, 100, 'some text', atable}) == 'boolean = true, number = 100, string = "some text", table = ' .. tostring(atable))
   end)
 
+  it("tests the substitution of variable types; nil", function()
+    s:set('substitute_test', 'boolean = %s, nil = %s, number = %s, string = "%s", table = %s')
+    local atable = {}
+    assert(s('substitute_test', {true, nil, 100, 'some text', atable, n = 5}) == 'boolean = true, nil = nil, number = 100, string = "some text", table = ' .. tostring(atable))
+  end)
+
   it("tests the set_fallback method", function()
     s:set_namespace('en')
     s:set('herp', 'derp')
