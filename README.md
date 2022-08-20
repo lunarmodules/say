@@ -1,8 +1,6 @@
 Say
 ====
 
-[![travis-ci status](https://secure.travis-ci.org/Olivine-Labs/say.png)](http://travis-ci.org/#!/Olivine-Labs/say/builds)
-
 say is a simple string key/value store for i18n or any other case where you
 want namespaced strings.
 
