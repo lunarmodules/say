@@ -4,7 +4,7 @@ Say
 say is a simple string key/value store for i18n or any other case where you
 want namespaced strings.
 
-Check out [busted](http://www.olivinelabs.com/busted) for
+Check out [busted](https://lunarmodules.github.io/busted/) for
 extended examples.
 
 ```lua
