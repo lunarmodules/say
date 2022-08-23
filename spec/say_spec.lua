@@ -1,9 +1,12 @@
 local s
 
 describe("Tests to make sure the say library is functional", function()
+
   setup(function()
-    package.loaded['say'] = false -- busted uses it, must force to reload
-    s = require('init')   -- devcode is in /src/init.lua not in /src/say/init.lua
+    -- busted loads say internally, force reload in case the sources we're
+    -- expected to test (via LUA_PATH) aren't the ones busted found earlier
+    package.loaded['say'] = false
+    s = require('say')
   end)
 
   it("tests the set function metamethod", function()
@@ -53,4 +56,5 @@ describe("Tests to make sure the say library is functional", function()
   it("tests missing elements returns nil", function()
     assert(s('this does not exist') == nil)
   end)
+
 end)

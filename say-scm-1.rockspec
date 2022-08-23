@@ -13,6 +13,7 @@ source = {
   url = "git+https://github.com/"..github_account_name.."/"..github_repo_name..".git",
   branch = git_checkout
 }
+
 description = {
   summary = "Lua string hashing/indexing library",
   detailed = [[
@@ -21,6 +22,7 @@ description = {
   homepage = "https://lunarmodules.github.io/busted/",
   license = "MIT <http://opensource.org/licenses/MIT>"
 }
+
 dependencies = {
   "lua >= 5.1"
 }
@@ -36,6 +38,6 @@ test = {
 build = {
   type = "builtin",
   modules = {
-    ["say.init"] = "src/init.lua"
+    ["say.init"] = "src/say/init.lua"
   }
 }
