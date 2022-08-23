@@ -37,7 +37,7 @@ jobs:
         run: busted -c -v --lpath="" --cpath="" --Xoutput "--color"
 
       - name: Report test coverage
-        if: success()
+        if: ${{ success() && github.repository == 'lunarmodules/say' }}
         continue-on-error: true
         run: luacov-coveralls -i src -e .luarocks
         env:
