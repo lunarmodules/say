@@ -1,30 +1,30 @@
-local package_name = "say"
-local package_version = "scm"
-local rockspec_revision = "1"
-local github_account_name = "lunarmodules"
-local github_repo_name = package_name
+package = "say"
+local rock_version = "scm"
+local rock_release = "1"
+local namespace = "lunarmodules"
+local repository = package
 
 rockspec_format = "3.0"
-package = package_name
-version = package_version .. "-" .. rockspec_revision
+version = ("%s-%s"):format(rock_version, rock_release)
 
 source = {
-  url = "git+https://github.com/"..github_account_name.."/"..github_repo_name..".git"
+  url = ("git+https://github.com/%s/%s.git"):format(namespace, repository),
+  branch = rock_version == "scm" and "master" or nil,
+  tag = rock_version ~= "scm" and rock_version or nil,
 }
-
-if package_version == "scm" then source.branch = "master" else source.tag = "v" .. package_version end
 
 description = {
   summary = "Lua string hashing/indexing library",
   detailed = [[
     Useful for internationalization.
   ]],
-  homepage = "https://lunarmodules.github.io/busted/",
-  license = "MIT <http://opensource.org/licenses/MIT>"
+  homepage = ("https://%s.github.io/%s"):format(namespace, repository),
+  issues_url = ("https://github.com/%s/%s/issues"):format(namespace, repository),
+  maintainer = "Caleb Maclennan <caleb@alerque.com>",
 }
 
 dependencies = {
-  "lua >= 5.1"
+  "lua >= 5.1",
 }
 
 test_dependencies = {
@@ -38,6 +38,6 @@ test = {
 build = {
   type = "builtin",
   modules = {
-    ["say.init"] = "src/say/init.lua"
+    say = "src/say/init.lua"
   }
 }
