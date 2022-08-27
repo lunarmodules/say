@@ -35,6 +35,7 @@ local __meta = {
       error(("expected parameter table to be a table, got '%s'"):format(type(vars)), 2)
     end
     vars = vars or {}
+    vars.n = math.max((vars.n or 0), #vars)
 
     local str = registry[current_namespace][key] or registry[fallback_namespace][key]
 

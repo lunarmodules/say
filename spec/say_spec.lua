@@ -57,4 +57,11 @@ describe("Tests to make sure the say library is functional", function()
     assert(s('this does not exist') == nil)
   end)
 
+  it("tests the wrong arg count", function()
+    -- backward compatibility after the nil-safe fix, in which the 'n' field got precendence over #
+    s:set('substitute_test', '1 = %s, 2 = %s')
+    -- two arguments, but "n = 1"
+    assert(s('substitute_test', {"one", "two", n = 1}) == '1 = one, 2 = two')
+  end)
+
 end)
