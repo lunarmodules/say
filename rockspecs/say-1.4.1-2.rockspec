@@ -1,10 +1,9 @@
 package = "say"
-local rock_version = "scm"
-local rock_release = "1"
+local rock_version = "1.4.1"
+local rock_release = "2"
 local namespace = "lunarmodules"
 local repository = package
 
-rockspec_format = "3.0"
 version = ("%s-%s"):format(rock_version, rock_release)
 
 source = {
@@ -20,22 +19,12 @@ description = {
   ]],
   license = "MIT",
   homepage = ("https://%s.github.io/%s"):format(namespace, repository),
-  issues_url = ("https://github.com/%s/%s/issues"):format(namespace, repository),
   maintainer = "Caleb Maclennan <caleb@alerque.com>",
 }
 
 dependencies = {
   "lua >= 5.1",
 }
-
-test_dependencies = {
-  "busted",
-}
-
-test = {
-  type = "busted",
-}
-
 build = {
   type = "builtin",
   modules = {
